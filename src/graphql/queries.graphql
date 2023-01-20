@@ -1,0 +1,66 @@
+============= SOLICITAR TODOS LOS USUARIOS ============== 
+query {
+  getUsuarios {
+    _id
+    username
+    age
+  }
+}
+
+============= SOLICITAR USUARIO ESPECIFICO ============== 
+query {
+  getUsuario(_id: "(especificar id)") {
+    username
+    phone
+    age
+    address
+    email
+  }
+}
+
+===================== CREAR USUARIO =====================
+mutation {
+  createUsuario(datos: {
+    username: "",
+    password: "",
+    phone: (num),
+    age: (num),
+    address: "",
+    email: "",
+    image: "",
+    cartID: "IDCarrito",
+    admin: false
+  }) {
+    _id,
+    username,
+    age,
+    email
+  }
+}
+
+=================== MODIFICAR USUARIO ===================
+mutation {
+  updateUsuario(_id: "(especificar id)", data: {
+    username: "",
+    password: "",
+    phone: (num),
+    age: (num),
+    address: "",
+    email: "",
+    image: "",
+    cartID: "IDCarrito",
+    admin: false
+  }) {
+    _id
+    username
+    email
+  }
+}
+
+===================== BORRAR USUARIO =====================
+mutation {
+  deleteUsuario(_id: "(especificar el id)") {
+    _id
+    username
+  }
+}
